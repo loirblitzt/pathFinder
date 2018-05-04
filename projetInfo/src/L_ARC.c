@@ -3,7 +3,7 @@
 L_ARC creerarc(void){
 	return(NULL);}
 
-Liste ajout_tete(L_ARC L,T_ARC T){
+L_ARC ajout_tete(L_ARC L,T_ARC T){
 	L_ARC p = (L_ARC)calloc(1,sizeof(*p));
 	if(p==NULL){
 		return NULL;

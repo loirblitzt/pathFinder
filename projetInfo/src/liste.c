@@ -20,7 +20,7 @@ void visualiser_liste(Liste l ){
 		}
 	}
 
-Liste ajout_tete (CARTE e , Liste l) {
+Liste ajout_tete (int e , Liste l) {
 	Liste p = calloc(1,sizeof(*p));
 	if (p==NULL){return NULL;}
 	p -> val = e;
@@ -48,7 +48,7 @@ void liberer (Liste l){
 		}
 	}
 
-Liste ajout_queue (CARTE c , Liste l){
+Liste ajout_queue (int c , Liste l){
 	Liste p = l;
 	if (l == NULL){
 		return ajout_tete(c,l);
@@ -85,3 +85,49 @@ Liste copie (Liste l){
 		}
 	return l1;
 	}
+supprimerelt(int j, Liste l){
+	if(!liste_vide(l)){
+		if(l->val==j){
+			supprimer_tete(l);
+			}	
+		else{Liste p=l;
+			while((l->suiv->val)!=j){
+				p=p->suiv;
+				}
+			p->suiv=p->suiv->suiv
+			free(p);
+			return l;
+			}
+		}
+	else
+		{
+		return NULL;
+		}
+	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

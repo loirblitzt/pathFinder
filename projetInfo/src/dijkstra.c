@@ -20,19 +20,23 @@ int min(int* tab,int dim){
 L_ARC dijSolver ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 	int *pcc=calloc(X,sizeof(*pcc));
 	int *pere;
-	L_ARC S=creerarc();
-	Liste C=calloc(X,sizeof(*C)); //verfier si alloc ok//
+	Liste S=creer_liste();
+	Liste C=creer_liste();
 	int i;
 	int ind;
 	
 	for(i=0;i<X;i++){
-		C[i]=i; //C contient les numeros de sommet non parcourus//
+		ajout_queue(i,C); //C contient les numeros de sommet non parcourus//
 		pcc[i]=infini;// mettre un tres grand nombre//
 		pere[i]=-1;
 	}
 	pcc[indDepart]=0;
 	do{ ind=min(pcc,X);
-		
+		C=supprimerelt(j,C);
+		S=ajout_tete(j,S);
+		L_ARC p=G[i]->voisins;
+		while(p->suiv!=NULL){
+			
 		
 			
 	    

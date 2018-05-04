@@ -35,7 +35,7 @@ L_ARC dijSolver ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 	do{ ind=min(pcc,X);
 		C=supprimerelt(j,C);
 		S=ajout_teteL(j,S);
-		L_ARC p=G[i]->voisins;
+		L_ARC p=G+i->voisins;
 		while(p->suiv!=NULL){
 			if(pcc[p->val->arrivee]>pcc[ind]+p->val->cout){
 				pcc[p->val->arrivee]=pcc[ind]+p->val->cout;

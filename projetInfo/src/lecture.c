@@ -41,7 +41,7 @@ T_SOMMET *readCSV (char * nomfichier){
 		fscanf(f,"%d %d %lf", &depart, &arrive, &cout );
 		ARC->arrivee=arrive;
 		ARC->cout=cout;
-		ajout_tete(Graph[depart]->L_ARC,ARC);
+		ajout_tete(Graph+depart->L_ARC,ARC);
 		}
 	fclose(f);
 	return(Graph);

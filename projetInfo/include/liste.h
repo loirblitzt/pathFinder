@@ -26,5 +26,7 @@ Liste concat(Liste l1, Liste l2);
 
 Liste copie (Liste l);
 
-supprimerelt(int j, Liste l);
+Liste supprimerelt(int j, Liste l);
+
+int appartenir(int a, Liste l);
 #endif

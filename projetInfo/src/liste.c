@@ -85,12 +85,13 @@ Liste copie (Liste l){
 		}
 	return l1;
 	}
-supprimerelt(int j, Liste l){
+Liste supprimerelt(int j, Liste l){
 	if(!liste_vide(l)){
 		if(l->val==j){
 			supprimer_tete(l);
 			}	
-		else{Liste p=l;
+		else{
+			Liste p=l;
 			while((l->suiv->val)!=j){
 				p=p->suiv;
 				}
@@ -105,7 +106,23 @@ supprimerelt(int j, Liste l){
 		}
 	}	
 	
-	
+int appartenir(int a, Liste l){ // retourne 0 si a n'est pas dans l//
+	if(liste_vide(l)){
+		return 0;
+		}
+	else{
+		Liste p=L;
+		while(liste_vide(p->suiv)){
+			if(p->val==a){
+				return 1;
+			}
+			p=p->suiv;
+		}
+		return 0;
+	}
+}
+				
+		
 	
 	
 	

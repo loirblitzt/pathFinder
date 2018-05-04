@@ -2,6 +2,7 @@
 #include "graph.h"
 #include "L_ARC.h"
 #include "liste.h"
+#define infini 2174483647
 int min(int* tab,int dim){
 	int i;
 	int min=0;
@@ -19,7 +20,7 @@ int min(int* tab,int dim){
 
 L_ARC dijSolver ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 	int *pcc=calloc(X,sizeof(*pcc));
-	int *pere;
+	int *pere=calloc(X,sizeof(*pcc));
 	Liste S=creer_liste();
 	Liste C=creer_liste();
 	int i;
@@ -36,7 +37,13 @@ L_ARC dijSolver ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 		S=ajout_tete(j,S);
 		L_ARC p=G[i]->voisins;
 		while(p->suiv!=NULL){
-			
+			if(pcc[p->val->arrivee]>pcc[ind]+p->val->cout){
+				pcc[p->val->arrivee]=pcc[ind]+p->val->cout;
+				pere[p->val->arrivee]=ind;
+				}
+			}
+	}while(appartenir(a,S)==0 && pcc[ind]!=infini)
+}
 		
 			
 	    

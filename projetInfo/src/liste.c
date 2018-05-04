@@ -20,7 +20,7 @@ void visualiser_liste(Liste l ){
 		}
 	}
 
-Liste ajout_tete (int e , Liste l) {
+Liste ajout_teteL (int e , Liste l) {
 	Liste p = calloc(1,sizeof(*p));
 	if (p==NULL){return NULL;}
 	p -> val = e;

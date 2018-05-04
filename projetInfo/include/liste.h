@@ -14,7 +14,7 @@ int liste_vide( Liste l);
 
 void visualiser_liste(Liste l );
 
-Liste ajout_tete (int e , Liste l) ;
+Liste ajout_teteL (int e , Liste l) ;
 
 Liste supprimer_tete (Liste l);
 

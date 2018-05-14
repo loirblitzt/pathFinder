@@ -1,5 +1,8 @@
 // fonction sur L_ARC//
+#include <stdlib.h>
+#include <stdio.h>	
 #include "L_ARC.h"
+#include "liste.h"
 
 L_ARC creerarc(void){
 	return NULL;}
@@ -21,7 +24,7 @@ void visualiserarc(L_ARC L){
 	}
 	
 	L_ARC p=L;
-	while(!liste_vide(p)){
+	while(p!=NULL){
 		printf("%d\n",((p->val).arrivee));
 		printf("%lf\n",((p->val).cout));
 		p=p->suiv;

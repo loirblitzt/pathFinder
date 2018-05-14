@@ -3,7 +3,7 @@
 #include "L_ARC.h"
 #include <stdio.h>
 int lecture_taille(char* nomfichier){
-	FILE f;
+	FILE* f;
 	f=fopen(nomfichier, "r");
 	if (f==NULL){
 		printf("ERREUR");
@@ -20,7 +20,7 @@ int lecture_taille(char* nomfichier){
 
 
 T_SOMMET *readCSV (char * nomfichier){
-	FILE f;
+	FILE* f;
 	f=fopen(nomfichier, "r");
 	if (f==NULL){
 		printf("ERREUR");
@@ -41,27 +41,27 @@ T_SOMMET *readCSV (char * nomfichier){
 	int numero ;
 	double lat,longi ;
 	char line[128] ;
-	T_SOMMET Sommet;
+	T_SOMMET SOMMET;
 	for(i=0;i<X;i++){
 		fscanf(f,"%d %lf %lf %s", &(numero), &(lat), &(longi), line);
 		fgets(mot,511,f);
-		SOMMET->x=lat;
-		SOMMET->y=longi;
-		SOMMET->nom=mot;
-		SOMMET->voisins=creerarc();
+		SOMMET.x=lat;
+		SOMMET.y=longi;
+		SOMMET.nom=mot;
+		SOMMET.voisins=creerarc();
 		Graph[numero]=SOMMET;
 		}
 	// au dessus creation du tableau de sommet, en dessous lecture des voisins//
 	int depart;
 	int arrive;
 	double cout;
-	T_ARC ARC
+	T_ARC ARC;
 	fgets(mot,511,f);
 	for(i=0;i<Y;i++){
 		fscanf(f,"%d %d %lf", &depart, &arrive, &cout );
-		ARC->arrivee=arrive;
-		ARC->cout=cout;
-		ajout_tete(Graph+depart->L_ARC,ARC);
+		ARC.arrivee=arrive;
+		ARC.cout=cout;
+		ajout_tete((Graph+depart)->voisins,ARC);
 		}
 	fclose(f);
 	return(Graph);

@@ -9,7 +9,7 @@ int min(int* tab,int dim){
 	int indmin
 	for(i=0;i<dim;i++){
 		if(tab[i]<min){
-			min=tab[i];
+			min=tab[i]; 
 			indmin=i
 			
 		}

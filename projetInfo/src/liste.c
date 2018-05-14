@@ -91,12 +91,13 @@ Liste supprimerelt(int j, Liste l){
 			supprimer_tete(l);
 			}	
 		else{
-			Liste p=l;
-			while((l->suiv->val)!=j){
+			Liste p=l; Liste c;
+			while((p->suiv->val)!=j){
 				p=p->suiv;
 				}
-			p->suiv=p->suiv->suiv
-			free(p);
+			c=p->suiv;
+			p->suiv=c->suiv;
+			free(c);
 			return l;
 			}
 		}

@@ -8,5 +8,5 @@
 T_SOMMET *readCSV (char * nomfichier);
 /* descrip :
 */
-
+int lecture_taille(char* nomfichier); //enregsitre taille//
 #endif

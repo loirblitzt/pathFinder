@@ -2,7 +2,7 @@ CC = gcc
 include = include
 src = src
 objdir = obj
-obj = $(objdir)/lecture.o $(objdir)/utilGraph.o 
+obj = $(objdir)/lecture.o $(objdir)/L_ARC.o
 EXEC = main.exe
 
 all : $(EXEC)

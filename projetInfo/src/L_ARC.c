@@ -1,5 +1,5 @@
 // fonction sur L_ARC//
-
+#include "L_ARC.h"
 L_ARC creerarc(void){
 	return(NULL);}
 

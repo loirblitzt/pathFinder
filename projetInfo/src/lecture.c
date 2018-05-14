@@ -51,7 +51,6 @@ T_SOMMET *readCSV (char * nomfichier){
 		Graph[numero]=SOMMET;
 		}
 	// au dessus creation du tableau de sommet, en dessous lecture des voisins//
-	fgets();
 	int depart;
 	int arrive;
 	double cout;

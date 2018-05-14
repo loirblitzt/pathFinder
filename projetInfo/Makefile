@@ -2,7 +2,7 @@ CC = gcc
 include = include
 src = src
 objdir = obj
-obj = $(objdir)/mytas.o  $(objdir)/testtri.o
+obj = $(objdir)/lecture.o $(objdir)/utilGraph.o 
 EXEC = main.exe
 
 all : $(EXEC)
@@ -13,6 +13,9 @@ $(objdir)/%.o: $(src)/%.c
 main.exe: $(obj)
 	$(CC) -o $@ $^
 
+ut_lec1 : $(obj) $(objdir)/ut_lecture.o
+	$(CC) -o $@ $^
+	
 clean:
 	rm $(objdir)/*.o
 

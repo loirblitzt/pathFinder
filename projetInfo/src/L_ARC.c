@@ -1,7 +1,8 @@
 // fonction sur L_ARC//
 #include "L_ARC.h"
+
 L_ARC creerarc(void){
-	return(NULL);}
+	return NULL;}
 
 L_ARC ajout_tete(L_ARC L,T_ARC T){
 	L_ARC p = (L_ARC)calloc(1,sizeof(*p));
@@ -21,8 +22,8 @@ void visualiserarc(L_ARC L){
 	
 	L_ARC p=L;
 	while(!liste_vide(p)){
-		printf("%d\n",*(p->T_ARC->arrivee));
-		printf("%lf\n",*(p->T_ARC->cout));
+		printf("%d\n",((p->val).arrivee));
+		printf("%lf\n",((p->val).cout));
 		p=p->suiv;
 	}
 }

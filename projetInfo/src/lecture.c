@@ -28,6 +28,8 @@ T_SOMMET *readCSV (char * nomfichier){
 	int X,Y;
 	fscanf(f,"%d",&X);
 	fscanf(f,"%d",&Y);
+	char mot[512] ;
+	fgets(mot,511,f);
 	T_SOMMET * Graph;
 	Graph=calloc(X,sizeof(*Graph));
 	if(Graph==NULL){
@@ -38,8 +40,7 @@ T_SOMMET *readCSV (char * nomfichier){
 	int numero ;
 	double lat,longi ;
 	char line[128] ;
-	char mot[512] ;
-	T_SOMMET Sommet
+	T_SOMMET Sommet;
 	for(i=0;i<X;i++){
 		fscanf(f,"%d %lf %lf %s", &(numero), &(lat), &(longi), line);
 		fgets(mot,511,f);
@@ -54,6 +55,7 @@ T_SOMMET *readCSV (char * nomfichier){
 	int arrive;
 	double cout;
 	T_ARC ARC
+	fgets(mot,511,f);
 	for(i=0;i<Y;i++){
 		fscanf(f,"%d %d %lf", &depart, &arrive, &cout );
 		ARC->arrivee=arrive;

@@ -1,6 +1,7 @@
 //lecture de CSV//
 #include "graph.h"
 #include "L_ARC.h"
+#include <stdio.h>
 int lecture_taille(char* nomfichier){
 	FILE f;
 	f=fopen(nomfichier, "r");

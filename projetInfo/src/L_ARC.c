@@ -25,8 +25,8 @@ void visualiserarc(L_ARC L){
 	
 	L_ARC p=L;
 	while(p!=NULL){
-		printf("%d\n",((p->val).arrivee));
-		printf("%lf\n",((p->val).cout));
+		printf("--arrivee %d\n",((p->val).arrivee));
+		printf("--cout %lf\n",((p->val).cout));
 		p=p->suiv;
 	}
 }

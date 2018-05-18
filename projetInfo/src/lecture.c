@@ -60,7 +60,7 @@ T_SOMMET *readCSV (char * nomfichier){
 		fscanf(f,"%d %d %lf", &depart, &arrive, &cout );
 		ARC.arrivee=arrive;
 		ARC.cout=cout;
-		ajout_tete((Graph+depart)->voisins,ARC);
+		(Graph+depart)->voisins = ajout_tete((Graph+depart)->voisins,ARC);
 		}
 	fclose(f);
 	return(Graph);

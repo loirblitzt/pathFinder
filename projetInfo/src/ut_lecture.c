@@ -2,6 +2,7 @@
 #include "graph.h"
 #include "L_ARC.h"
 #include "affichage.h"
+#include "lecture.h"
 
 
 void main(){

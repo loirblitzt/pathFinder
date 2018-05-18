@@ -2,6 +2,7 @@
 #include "graph.h"
 #include "L_ARC.h"
 #include <stdio.h>
+#include <string.h>
 int lecture_taille(char* nomfichier){
 	FILE* f;
 	f=fopen(nomfichier, "r");
@@ -31,12 +32,10 @@ T_SOMMET *readCSV (char * nomfichier){
 	fscanf(f,"%d",&Y);
 	char mot[512] ;
 	fgets(mot,511,f);
+	fgets(mot,511,f);//enlève la ligne maggle
 	T_SOMMET * Graph;
-	Graph=calloc(X,sizeof(*Graph));
-	if(Graph==NULL){
-		printf("ERREUR");
-		return NULL ;
-	}
+	Graph=(T_SOMMET*)calloc(X,sizeof(*Graph));
+	if(Graph==NULL){printf("ERREUR");return NULL ;}
 	int i;
 	int numero ;
 	double lat,longi ;
@@ -47,7 +46,7 @@ T_SOMMET *readCSV (char * nomfichier){
 		fgets(mot,511,f);
 		SOMMET.x=lat;
 		SOMMET.y=longi;
-		SOMMET.nom=mot;
+		strcpy(SOMMET.nom,line);//penser au copy string
 		SOMMET.voisins=creerarc();
 		Graph[numero]=SOMMET;
 		}

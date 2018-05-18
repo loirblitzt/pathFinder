@@ -1,5 +1,5 @@
 //parseCSV.h traduit le fichier .csv en structure C
-#ifndef -csv
+#ifndef _csv
 #define _csv
 
 #include "graph.h"

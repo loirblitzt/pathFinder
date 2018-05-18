@@ -7,8 +7,8 @@
 
 void main(){
 T_SOMMET* G;
-G=readCSV("graphe1.txt");
-int X=lecture_taille("graphe1.txt");
+G=readCSV("ressources/graphe1.txt");
+int X=lecture_taille("ressources/graphe1.txt");
 Liste Sol;
 Sol=dijSolver(G,0,5,X);
 visualiser_liste(Sol);

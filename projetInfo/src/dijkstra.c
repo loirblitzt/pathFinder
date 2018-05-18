@@ -26,7 +26,6 @@ Liste dijSolver ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 	Liste C=creer_liste();
 	int i;
 	int ind;
-	
 	for(i=0;i<X;i++){
 		ajout_queue(i,C); //C contient les numeros de sommet non parcourus//
 		pcc[i]=infini;// mettre un tres grand nombre//
@@ -38,10 +37,11 @@ Liste dijSolver ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 		S=ajout_teteL(ind,S);
 		L_ARC p=(G+ind)->voisins;
 		while(p!=NULL){
+			if(appartenir(p->val.arrivee,S)==0){
 			if(pcc[p->val.arrivee]>pcc[ind]+p->val.cout){
 				pcc[p->val.arrivee]=pcc[ind]+p->val.cout;
 				pere[p->val.arrivee]=ind;
-				}
+				}}
 			p=p->suiv;}
 	}while(appartenir(indArrivee,S)==0 && pcc[ind]!=infini);
 	return S;

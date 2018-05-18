@@ -7,7 +7,7 @@ int lecture_taille(char* nomfichier){
 	FILE* f;
 	f=fopen(nomfichier, "r");
 	if (f==NULL){
-		printf("ERREUR");
+		printf("ERREUR taille\n");
 		return  NULL;
 	}
 	int X;
@@ -24,7 +24,7 @@ T_SOMMET *readCSV (char * nomfichier){
 	FILE* f;
 	f=fopen(nomfichier, "r");
 	if (f==NULL){
-		printf("ERREUR");
+		printf("ERREUR open file \n");
 		return  NULL;
 	}
 	int X,Y;
@@ -35,7 +35,7 @@ T_SOMMET *readCSV (char * nomfichier){
 	fgets(mot,511,f);//enlève la ligne maggle
 	T_SOMMET * Graph;
 	Graph=(T_SOMMET*)calloc(X,sizeof(*Graph));
-	if(Graph==NULL){printf("ERREUR");return NULL ;}
+	if(Graph==NULL){printf("ERREUR alloc graph\n");return NULL ;}
 	int i;
 	int numero ;
 	double lat,longi ;

@@ -113,7 +113,7 @@ int appartenir(int a, Liste L){ // retourne 0 si a n'est pas dans l//
 		}
 	else{
 		Liste p=L;
-		while(liste_vide(p->suiv)){
+		while(liste_vide(p)){
 			if(p->val==a){
 				return 1;
 			}

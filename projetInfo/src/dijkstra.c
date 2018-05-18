@@ -2,15 +2,16 @@
 #include "graph.h"
 #include "L_ARC.h"
 #include "liste.h"
+#include <stdio.h>
 #define infini 2174483647
 int min(int* tab,int dim){
 	int i;
 	int min=0;
-	int indmin
+	int indmin;
 	for(i=0;i<dim;i++){
 		if(tab[i]<min){
 			min=tab[i]; 
-			indmin=i
+			indmin=i;
 			
 		}
 	}
@@ -33,20 +34,20 @@ Liste dijSolver ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 	}
 	pcc[indDepart]=0;
 	do{ ind=min(pcc,X);
-		C=supprimerelt(j,C);
-		S=ajout_teteL(j,S);
-		L_ARC p=G+i->voisins;
+		C=supprimerelt(ind,C);
+		S=ajout_teteL(ind,S);
+		L_ARC p=(G+ind)->voisins;
 		while(p!=NULL){
-			if(pcc[p->val->arrivee]>pcc[ind]+p->val->cout){
-				pcc[p->val->arrivee]=pcc[ind]+p->val->cout;
-				pere[p->val->arrivee]=ind;
+			if(pcc[p->val.arrivee]>pcc[ind]+p->val.cout){
+				pcc[p->val.arrivee]=pcc[ind]+p->val.cout;
+				pere[p->val.arrivee]=ind;
 				}
 			p=p->suiv;}
-	}while(appartenir(a,S)==0 && pcc[ind]!=infini)
+	}while(appartenir(indArrivee,S)==0 && pcc[ind]!=infini);
 	return S;
 }
 
-Liste dijSolverTas ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
+/*Liste dijSolverTas ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 	T_ARC *pcc=calloc(X,sizeof(*pcc));
 	int *pere=calloc(X,sizeof(*pcc));
 	Liste S=creer_liste();
@@ -76,7 +77,7 @@ Liste dijSolverTas ( T_SOMMET* G,int indDepart ,int indArrivee,int X){
 			p=p->suiv;}
 	}while(appartenir(a,S)==0 && pcc[ind]!=infini)
 	return S;
-}
+}*/
 			
 			
 	    

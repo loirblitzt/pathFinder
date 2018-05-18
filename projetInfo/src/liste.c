@@ -1,4 +1,4 @@
-#include "carte.h"
+
 #include "liste.h"
 #include <stdio.h>
 
@@ -15,7 +15,7 @@ void visualiser_liste(Liste l ){
 	Liste p = l;
 	if (p==NULL) {printf("la liste est vide ");}
 	while (p!=NULL){
-		affiche(&(p->val));
+		printf("%d\n", (p->val));
 		p = p-> suiv;
 		}
 	}
@@ -107,8 +107,8 @@ Liste supprimerelt(int j, Liste l){
 		}
 	}	
 	
-int appartenir(int a, Liste l){ // retourne 0 si a n'est pas dans l//
-	if(liste_vide(l)){
+int appartenir(int a, Liste L){ // retourne 0 si a n'est pas dans l//
+	if(liste_vide(L)){
 		return 0;
 		}
 	else{

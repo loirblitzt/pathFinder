@@ -2,8 +2,8 @@ CC = gcc
 include = include
 src = src
 objdir = obj
-obj = $(objdir)/lecture.o $(objdir)/L_ARC.o $(objdir)/affichage.o
-EXEC = ut_lec1#main.exe
+obj = $(objdir)/lecture.o $(objdir)/L_ARC.o $(objdir)/affichage.o $(objdir)/dijkstra.o  $(objdir)/liste.o 
+EXEC = test_dijkstra#main.exe
 
 all : $(EXEC)
 
@@ -15,7 +15,8 @@ main.exe: $(obj)
 
 ut_lec1 : $(obj) $(objdir)/ut_lecture.o
 	$(CC) -o $@ $^
-	
+test_dijkstra : $(obj) $(objdir)/test_dijkstra.o
+	$(CC) -o $@ $^	
 clean:
 	rm $(objdir)/*.o
 

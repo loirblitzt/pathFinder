@@ -7,10 +7,13 @@
 
 void main(){
 T_SOMMET* G;
+//lecture des données deja testé dans ./ut_lecture
 G=readCSV("ressources/graphe1.txt");
 int X=lecture_taille("ressources/graphe1.txt");
+//resolution du chemin
 Liste Sol;
-Sol=dijSolver(G,0,5,X);
+Sol=dijSolver(G,7,2,X);
 visualiser_liste(Sol);
 }
+
 

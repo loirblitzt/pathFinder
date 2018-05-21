@@ -13,7 +13,7 @@ int liste_vide( Liste l){
 
 void visualiser_liste(Liste l ){
 	Liste p = l;
-	if (p==NULL) {printf("la liste est vide ");}
+	if (p==NULL) {printf("la liste est vide \n");}
 	while (p!=NULL){
 		printf("%d\n", (p->val));
 		p = p-> suiv;
@@ -107,13 +107,13 @@ Liste supprimerelt(int j, Liste l){
 		}
 	}	
 	
-int appartenir(int a, Liste L){ // retourne 0 si a n'est pas dans l//
+int appartenir(int a, Liste L){ // retourne 0 si a n'est pas dans l,  1 sinon//
 	if(liste_vide(L)){
 		return 0;
 		}
 	else{
 		Liste p=L;
-		while(liste_vide(p)){
+		while(!liste_vide(p)){ //ahhaha cest pour ca que ça ne marchais pas
 			if(p->val==a){
 				return 1;
 			}
